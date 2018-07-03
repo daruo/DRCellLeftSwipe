@@ -106,10 +106,9 @@ static NSString *const musicStepCellIdtntifer02 = @"musicStepCellIdtntifer02";
     deleteAction.backgroundColor = [UIColor redColor];
     
     // 添加一个标记未读按钮
-    UITableViewRowAction *unreadAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"标记未读" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    UITableViewRowAction *unreadAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"编辑" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"show" message:@"标记未读" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        [tableView setEditing:NO animated:YES];
         
     }];
     
