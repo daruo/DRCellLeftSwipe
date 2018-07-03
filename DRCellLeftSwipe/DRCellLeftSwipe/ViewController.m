@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "DRSystermCellSwipe.h"
 #import "MGSwipeButton.h"
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate>
+@interface ViewController ()
 /** <#param#>     */
 @property (nonatomic, strong) UITableView                    *tableView;
 /** <#param#>     */
@@ -43,7 +43,12 @@ static NSString *const musicStepCellIdtntifer = @"musicStepCellIdtntifer";
     if (!cell) {
         cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:musicStepCellIdtntifer];
     }
-    cell.delegate = self;
+    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+#warning 此处的判断将影响 代理方法的调用，对于低版本系统而言，如果不设置代理，则无法执行侧滑逻辑，对于高版本而言，直接会进入 iOS11 对应的代理
+    NSArray *versions = [phoneVersion componentsSeparatedByString:@"."];
+    if ([versions.firstObject floatValue] < 11.0) {
+        cell.delegate = self;
+    }
     cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld行",indexPath.row];
     return cell;
 }
@@ -64,8 +69,7 @@ static NSString *const musicStepCellIdtntifer = @"musicStepCellIdtntifer";
                                                   __kindof UIView * _Nonnull sourceView,
                                                   void (^ _Nonnull completionHandler)(BOOL))
                                         {
-                                            
-                                            
+
                                             completionHandler(true);
                                         }];
     

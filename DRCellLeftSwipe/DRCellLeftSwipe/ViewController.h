@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MGSwipeTableCell.h"
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate>
 
 
 @end
