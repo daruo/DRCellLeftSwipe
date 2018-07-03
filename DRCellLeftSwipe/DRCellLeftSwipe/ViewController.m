@@ -44,7 +44,7 @@ static NSString *const musicStepCellIdtntifer = @"musicStepCellIdtntifer";
         cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:musicStepCellIdtntifer];
     }
     NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
-#warning 此处的判断将影响 代理方法的调用，对于低版本系统而言，如果不设置代理，则无法执行侧滑逻辑，对于高版本而言，直接会进入 iOS11 对应的代理
+#warning 此处的判断将影响 代理方法的调用，对于低版本系统而言，如果不设置代理，则无法执行侧滑逻辑，对于高版本而言，设置代理后，就不会会进入iOS11对应的代理，所以代理设置要留意。
     NSArray *versions = [phoneVersion componentsSeparatedByString:@"."];
     if ([versions.firstObject floatValue] < 11.0) {
         cell.delegate = self;
