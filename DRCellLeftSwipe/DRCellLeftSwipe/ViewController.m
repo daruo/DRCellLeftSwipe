@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "DRSystermCellSwipe.h"
 #import "MGSwipeButton.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource,MGSwipeTableCellDelegate>
 /** <#param#>     */
@@ -20,13 +20,20 @@ static NSString *const musicStepCellIdtntifer = @"musicStepCellIdtntifer";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"DRCellLeftSwipe";
+    self.title = @"自定义左滑";
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"原生" style:UIBarButtonItemStylePlain target:self action:@selector(go)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 }
 
+
+-(void)go {
+    DRSystermCellSwipe *systermSwipe = [[DRSystermCellSwipe alloc] init];
+    [self.navigationController pushViewController:systermSwipe animated:YES];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dateSourceArray.count;
 }
@@ -39,6 +46,10 @@ static NSString *const musicStepCellIdtntifer = @"musicStepCellIdtntifer";
     cell.delegate = self;
     cell.textLabel.text = [NSString stringWithFormat:@"这是第%ld行",indexPath.row];
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
 }
 
 #pragma iOS11 后左滑将进入此方法，设置 actions.performsFirstActionWithFullSwipe = NO 可以控制是否自动删除。

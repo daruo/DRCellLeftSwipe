@@ -14,6 +14,7 @@
 		AD9F2A8420EB8B420043F03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9F2A8320EB8B420043F03D /* Assets.xcassets */; };
 		AD9F2A8720EB8B420043F03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F2A8520EB8B420043F03D /* LaunchScreen.storyboard */; };
 		AD9F2A8A20EB8B420043F03D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9F2A8920EB8B420043F03D /* main.m */; };
+		AD9F2A9220EB97700043F03D /* DRSystermCellSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9F2A9120EB97700043F03D /* DRSystermCellSwipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		AD9F2A8620EB8B420043F03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD9F2A8820EB8B420043F03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9F2A8920EB8B420043F03D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AD9F2A9020EB97700043F03D /* DRSystermCellSwipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRSystermCellSwipe.h; sourceTree = "<group>"; };
+		AD9F2A9120EB97700043F03D /* DRSystermCellSwipe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRSystermCellSwipe.m; sourceTree = "<group>"; };
 		E9404EBABC67C525EBEE7AC5 /* Pods-DRCellLeftSwipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DRCellLeftSwipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-DRCellLeftSwipe/Pods-DRCellLeftSwipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +89,8 @@
 				AD9F2A7B20EB8B360043F03D /* AppDelegate.m */,
 				AD9F2A7D20EB8B360043F03D /* ViewController.h */,
 				AD9F2A7E20EB8B360043F03D /* ViewController.m */,
+				AD9F2A9020EB97700043F03D /* DRSystermCellSwipe.h */,
+				AD9F2A9120EB97700043F03D /* DRSystermCellSwipe.m */,
 				AD9F2A8020EB8B360043F03D /* Main.storyboard */,
 				AD9F2A8320EB8B420043F03D /* Assets.xcassets */,
 				AD9F2A8520EB8B420043F03D /* LaunchScreen.storyboard */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9F2A9220EB97700043F03D /* DRSystermCellSwipe.m in Sources */,
 				AD9F2A7F20EB8B360043F03D /* ViewController.m in Sources */,
 				AD9F2A8A20EB8B420043F03D /* main.m in Sources */,
 				AD9F2A7C20EB8B360043F03D /* AppDelegate.m in Sources */,
@@ -365,7 +371,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97WGUG7HN7;
 				INFOPLIST_FILE = DRCellLeftSwipe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeSmart.DRCellLeftSwipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -380,7 +389,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97WGUG7HN7;
 				INFOPLIST_FILE = DRCellLeftSwipe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BeeSmart.DRCellLeftSwipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
